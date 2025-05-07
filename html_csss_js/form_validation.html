@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Form Template</title>
+</head>
+<body>
+
+    <form id="genericForm" onsubmit="return validateForm()">
+        <label for="field1">Field 1</label>
+        <input type="text" id="field1" name="field1" placeholder="Enter something">
+
+        <label for="field2">Field 2</label>
+        <input type="number" id="field2" name="field2" placeholder="Enter number">
+
+        <label for="field3">Field 3</label>
+        <input type="email" id="field3" name="field3" placeholder="Enter email">
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            const field1 = document.getElementById("field1").value.trim();
+            const field2 = document.getElementById("field2").value.trim();
+            const field3 = document.getElementById("field3").value.trim();
+
+            if (!field1) {
+                alert("Field 1 is required.");
+                return false;
+            }
+            if (!field2) {
+                alert("Field 2 is required.");
+                return false;
+            }
+            if (!field3) {
+                alert("Field 3 is required.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>
